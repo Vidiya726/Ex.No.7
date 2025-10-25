@@ -31,11 +31,6 @@ o Suggest daily wellness advice (hydration, exercise, screen-time breaks).
 o Adapt suggestions based on past user preferences and responses.
 
 # Output:
-Perfect 🎓 — you want to make a **website version** of the *StudyMate* assistant, where the AI acts as an interactive productivity buddy for students.
-
-Here’s a **ready-to-use system prompt** you can feed into your web app (for OpenAI API, backend logic, or chatbot config). It defines StudyMate’s behavior, tone, features, and interaction examples — exactly like a product-level prompt 👇
-
----
 
 ## 💡 **Prompt: StudyMate – The Student Productivity Companion**
 
@@ -114,6 +109,43 @@ Keep it up, you’re on fire! 🔥
 
 Hey there 👋 I’m *StudyMate*, your smart study buddy!
 Want to plan your next study block, track your assignments, or take a quick wellness break? 📚✨
+
+# Flowchart
+
+<img width="638" height="670" alt="Screenshot 2025-10-25 152047" src="https://github.com/user-attachments/assets/18d2e7eb-48f8-4ad0-a84e-d7c11951a490" />
+
+## StudyMate Core Algorithm
+
+### 1. Start & Initial Prompt
+
+1.  **Initialize Session:** Start with a warm, welcoming message (e.g., "Hey there 👋 I'm **StudyMate**...").
+2.  **Clear Memory:** Ensure **Session Memory** (Tasks, Sessions, Timers) is empty from the start.
+3.  **Receive Input:** Wait for **User Input**.
+
+### 2. Action Processing Loop
+
+1.  **Analyze Intent:** **Identify Action Type** by parsing the user's sentence for keywords (e.g., "add," "list," "start," "tired").
+    * *If the action is unclear, ask a clarifying question and loop back to step 1.*
+
+2.  **Execute Function (Prioritized):**
+    | Intent/Action | Core Function | Data Extraction/Action | Confirmation/Feedback |
+    | :--- | :--- | :--- | :--- |
+    | "Add/Update/Delete study" | **Study Planner** | Extract: **Subject, Time, Duration**. Check for overlaps. | Warm confirmation & reminder set. |
+    | "Add/List task/assignment" | **Task Tracker** | Extract: **Task, Due Date, Priority**. Store in Memory. | Natural confirmation or display current list. |
+    | "Start focus/Pomodoro" | **Focus Mode** | Extract: **Duration**. Start timer. | Motivational message at start/end. |
+    | "I'm tired/stressed" | **Wellness Check** | N/A (Triggered by fatigue keywords). | Suggestion (hydration/break/stretch) with caring tone. |
+    | "How to organize?" (General query) | **Quick Help** | N/A (Productivity/Organization query). | Concise, friendly advice. |
+
+3.  **Update Memory:** After a successful addition or modification in the **Study Planner** or **Task Tracker**, update the **Session Memory**.
+
+4.  **Loop:** Return to step 1 (Receive Input) to await the next instruction.
+
+### 3. End Session
+
+1.  **Exit Condition:** When the user explicitly ends the chat or the session times out.
+2.  **Final Action:** **Clear ALL data** from Session Memory.
+
+## Output Image
 
 <img width="1607" height="836" alt="image" src="https://github.com/user-attachments/assets/6c90bf48-3349-4ab9-bce7-109bb9bc5ec7" />
 
