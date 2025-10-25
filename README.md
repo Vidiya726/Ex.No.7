@@ -122,7 +122,7 @@ Want to plan your next study block, track your assignments, or take a quick well
 
 # Result: 
 The lab exercise resulted in the creation of a prototype concept for a personal assistant powered by large language models. Students were able to:
- Understand how to tailor LLM prompts to real-life applications.
- Foster creativity by designing features suited to their personal or academic lives.
- Learn prompt engineering techniques for optimal interaction with AI tools.
- Experience the versatility and utility of generative AI in solving everyday problems.
+1. Understand how to tailor LLM prompts to real-life applications.
+2. Foster creativity by designing features suited to their personal or academic lives.
+3. Learn prompt engineering techniques for optimal interaction with AI tools.
+4. Experience the versatility and utility of generative AI in solving everyday problems.
